@@ -181,6 +181,16 @@ python persona_runner.py
 - **Demo Shortcut:** Click the **"Demo Mode (SD-402)"** button on the frontend to pre-fill Rajesh's seller ID and start the call — no speech recognition failure can break the demo recording.
 - **Persona Test Log:** See [PERSONA_TEST_LOG.md](file:///c:/Users/jasveer%20singh/Desktop/KAM/PERSONA_TEST_LOG.md) for detailed verification across all 22 seller personas.
 
+### Deploy Frontend to Vercel (Free 24/7 Web Hosting)
+1. Go to [vercel.com/new](https://vercel.com/new) and import **`Jasveersinghok/voice-agent`**.
+2. Set **Root Directory** to `frontend`.
+3. Add these 4 Environment Variables:
+   - `LIVEKIT_URL` = `wss://snapdeal-y27zsbou.livekit.cloud`
+   - `LIVEKIT_API_KEY` = your LiveKit API key
+   - `LIVEKIT_API_SECRET` = your LiveKit API secret
+   - `NEXT_PUBLIC_LIVEKIT_URL` = `wss://snapdeal-y27zsbou.livekit.cloud`
+4. Click **Deploy** to get a public URL (e.g. `https://snapdeal-virtual-kam.vercel.app`).
+
 ---
 
 ## Assumptions
