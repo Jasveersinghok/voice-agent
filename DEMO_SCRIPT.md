@@ -4,6 +4,20 @@
 
 ---
 
+## 🎙️ Your Dialogue Cheat Sheet (Keep this open while recording)
+
+* **Turn 1 (Verification):** `"My seller ID is SD-402"`
+* **Turn 2 (Confirm ID):** `"Yes, that's correct"`
+* **Turn 3 (State Problem):** `"My sales have dropped a lot this month, I'm worried"`
+* **Turn 4 (Deliberate Interruption):** Speak over the agent: `"—actually, yes, those are my two best sellers and they've been out of stock for 3 weeks"`
+* **Turn 5 (Root Cause Detail):** `"It's a supplier delay, should be back in about 7 days"`
+* **Turn 6 (Confirm Root Cause):** `"Yes exactly"`
+* **Turn 7 (Consent Action 1):** `"Yes, go ahead and do the auto-pause"`
+* **Turn 8 (Consent Action 2):** `"Yes, run the promotion too"`
+* **Turn 9 (Close Call):** `"No, that's great, thank you"`
+
+---
+
 ## Setup Before Recording
 
 1. Agent running: Either live on LiveKit Cloud (already deployed and active!), OR locally via `cd agent && lk agent dev src/agent.py`
