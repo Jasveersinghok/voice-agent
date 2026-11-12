@@ -1,0 +1,7 @@
+[project]
+subdomain = "snapdeal-y27zsbou"
+
+[agent]
+name = "kam-agent"
+id = "CA_2TZSqkhK3Hkb"
+subdomain = "snapdeal-y27zsbou"

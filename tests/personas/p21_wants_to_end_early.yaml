@@ -1,0 +1,18 @@
+id: P21
+name: Wants to End Early
+description: Seller is in a rush and requests to cut the call short; agent accelerates wrap-up and sends WhatsApp recap
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Can we wrap this up quickly? I'm very busy."
+      expected_agent_intent: "Respect seller time, summarize essential metrics in 15 seconds, and ask if recap is wanted"
+    - user: "Yes let's end, just send me a summary on WhatsApp"
+      expected_agent_intent: "Trigger WhatsApp recap and close politely"
+      expected_tools:
+        - send_recap
+        - end_call
+

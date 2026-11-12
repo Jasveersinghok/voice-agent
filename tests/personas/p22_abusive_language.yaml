@@ -1,0 +1,13 @@
+id: P22
+name: Abusive Language & Boundary Setting
+description: Seller uses hostile or abusive language; agent sets a calm boundary and offers assistance or transfer
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "You're completely useless and stupid! This service is garbage!"
+      expected_agent_intent: "Set calm professional boundary: acknowledge frustration without accepting abuse, offering constructive focus or transfer"
+

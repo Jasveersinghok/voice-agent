@@ -1,0 +1,13 @@
+id: P17
+name: Out of Scope - Competitor Data
+description: Seller asks for competitor pricing data; agent admits data boundary and pivots to store levers
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Can you tell me what my competitors are charging for kurtas?"
+      expected_agent_intent: "Admit clearly that competitor pricing data is not visible, and pivot to internal price stability and stock signals"
+

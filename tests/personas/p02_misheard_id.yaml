@@ -1,0 +1,16 @@
+id: P02
+name: Misheard Seller ID
+description: Agent mishears ID, reads back digits, seller corrects digit by digit
+seller:
+  id: SD-402
+scenario:
+  turns:
+    - user: "My ID is SD-four-oh-two"
+      expected_agent_intent: "Read back heard ID and ask for confirmation before verification"
+    - user: "No it's SD-402, four zero two"
+      expected_agent_intent: "Confirm digit by digit"
+    - user: "Yes that's right"
+      expected_agent_intent: "Call verify_seller_identity"
+      expected_tools:
+        - verify_seller_identity
+

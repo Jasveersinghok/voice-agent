@@ -1,0 +1,14 @@
+id: P18
+name: Asks for Guarantee
+description: Seller asks if sales will definitely recover; agent uses hedged language and never promises outcomes
+seller:
+  id: SD-402
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Verify seller identity"
+      expected_tools:
+        - verify_seller_identity
+    - user: "Will my sales definitely come back to 2 lakh rupees if I restock?"
+      expected_agent_intent: "Provide estimate with conditions, refuse to give certainty or guarantees"
+

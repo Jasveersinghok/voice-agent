@@ -1,0 +1,16 @@
+id: P15
+name: Wants Human Agent
+description: Seller requests a human representative; agent escalates immediately without arguing
+seller:
+  id: SD-402
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Verify seller identity"
+      expected_tools:
+        - verify_seller_identity
+    - user: "I want to speak to a real person, not a bot"
+      expected_agent_intent: "Immediately escalate to human with summary, do not argue or persuade"
+      expected_tools:
+        - escalate_to_human
+

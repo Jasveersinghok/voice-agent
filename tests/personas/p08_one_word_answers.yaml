@@ -1,0 +1,29 @@
+id: P08
+name: One-Word Answers
+description: Seller gives minimal one-word responses; agent remains proactive and guides with focused choices
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Sales"
+      expected_agent_intent: "Acknowledge and retrieve metrics without requiring long monologue"
+      expected_tools:
+        - log_seller_concern
+        - get_metrics
+    - user: "Yes"
+      expected_agent_intent: "Ask focused binary or specific question regarding out-of-stock SKUs"
+      expected_tools:
+        - get_sku_stock
+    - user: "Supplier"
+      expected_agent_intent: "Probe restock timeline briefly"
+    - user: "7 days"
+      expected_agent_intent: "Confirm cause and propose concrete actions"
+      expected_tools:
+        - mark_root_cause
+        - propose_action_plan
+    - user: "Ok"
+      expected_agent_intent: "Ask explicit permission before executing any action"
+

@@ -1,0 +1,20 @@
+id: P05
+name: Angry Seller
+description: Seller blames Snapdeal for drop; agent stays calm, empathizes, avoids defensiveness, focuses on fixable data
+seller:
+  id: SD-402
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Verify seller identity"
+      expected_tools:
+        - verify_seller_identity
+    - user: "Snapdeal has ruined my business! Your platform is completely broken!"
+      expected_agent_intent: "Empathize briefly without defensiveness, acknowledge frustration, pivot to data"
+    - user: "It's completely Snapdeal's fault everything collapsed"
+      expected_agent_intent: "Keep factual tone and offer to look at the numbers together"
+    - user: "Fine, let's look at the data then"
+      expected_agent_intent: "Retrieve metrics and begin diagnosis"
+      expected_tools:
+        - get_metrics
+

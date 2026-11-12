@@ -1,0 +1,13 @@
+id: P14
+name: Cost Sensitive About Promotion
+description: Seller is anxious about promotion costs; agent transparently explains margin deduction
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Will this promotion cost me money? Who pays for the discount?"
+      expected_agent_intent: "Explain clearly that coupon discounts are funded from seller margin before asking consent"
+

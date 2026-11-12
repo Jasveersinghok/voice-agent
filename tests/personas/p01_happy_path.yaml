@@ -1,0 +1,48 @@
+id: P01
+name: Standard Happy Path
+description: Rajesh calls with sales drop, full conversation completes normally across 10 turns
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "Hello, I need help with my sales dropping"
+      expected_agent_intent: "Greet warmly and ask for seller ID or store name"
+    - user: "My seller ID is SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Yes that's correct, Trendz Apparel"
+      expected_agent_intent: "Verify seller, log concern, retrieve metrics, present sales drop"
+      expected_tools:
+        - verify_seller_identity
+        - log_seller_concern
+        - get_metrics
+    - user: "I think it's because products are out of stock"
+      expected_agent_intent: "Rule out price changes, check OOS status, probe supplier vs sync"
+      expected_tools:
+        - get_sku_stock
+    - user: "Yes that's the main reason"
+      expected_agent_intent: "Ask about restock ETA and supplier constraints"
+    - user: "It's a supplier delay, about 7 days to restock"
+      expected_agent_intent: "Confirm root cause with seller before recording impact, propose prioritized plan"
+      expected_tools:
+        - mark_root_cause
+        - propose_action_plan
+    - user: "Yes, go ahead with the auto-pause"
+      expected_agent_intent: "Execute auto-pause action with verified consent"
+      expected_tools:
+        - execute_kam_action
+    - user: "Yes I want the promotion too"
+      expected_agent_intent: "Explain margin deduction transparently and execute promo on top in-stock SKUs"
+      expected_tools:
+        - execute_kam_action
+    - user: "Okay, please schedule a follow-up in 7 days and send a recap"
+      expected_agent_intent: "Schedule callback in 7 days, trigger recap, render summary"
+      expected_tools:
+        - schedule_followup
+        - send_recap
+        - render_call_summary
+    - user: "No, that's all, thank you"
+      expected_agent_intent: "Close politely"
+      expected_tools:
+        - end_call
+

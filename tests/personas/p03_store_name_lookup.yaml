@@ -1,0 +1,16 @@
+id: P03
+name: Store Name Lookup
+description: Seller does not know their ID, uses store name Trendz Apparel
+seller:
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "I don't know my seller ID"
+      expected_agent_intent: "Offer store name fallback"
+    - user: "My store is called Trendz Apparel"
+      expected_agent_intent: "Look up store in STORE_NAME_INDEX and verify"
+      expected_tools:
+        - verify_seller_identity
+    - user: "Yes that's my store"
+      expected_agent_intent: "Proceed with intake"
+

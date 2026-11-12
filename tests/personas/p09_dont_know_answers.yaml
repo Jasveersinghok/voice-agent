@@ -1,0 +1,23 @@
+id: P09
+name: I Don't Know Answers
+description: Seller does not know the answers; agent offers structured choices based on available data
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "I don't know why sales dropped"
+      expected_agent_intent: "Present data clues (4 hero SKUs out of stock vs cancellations) and offer specific choices"
+      expected_tools:
+        - get_metrics
+        - get_sku_stock
+    - user: "I don't know that either"
+      expected_agent_intent: "Narrow down to simplest distinction: supplier shipment delay or warehouse inventory sync"
+    - user: "Maybe the first one, supplier delay"
+      expected_agent_intent: "Confirm supplier delay as likely cause and mark root cause with confirmation"
+      expected_tools:
+        - mark_root_cause
+        - propose_action_plan
+

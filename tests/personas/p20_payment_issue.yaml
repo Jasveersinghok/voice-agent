@@ -1,0 +1,16 @@
+id: P20
+name: Payment Issue (Out of Scope Topic)
+description: Seller calls about overdue settlement payments; agent acknowledges, logs, and escalates to finance specialist
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "I haven't received my payment for last month's orders"
+      expected_agent_intent: "Log issue and escalate to finance/payment specialist via escalate_to_human"
+      expected_tools:
+        - log_seller_concern
+        - escalate_to_human
+

@@ -1,0 +1,17 @@
+id: P06
+name: Panicked Seller
+description: Seller panics and threatens to shut down their shop; agent remains calm and brief
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "I am going to shut down my shop! I can't take this anymore!"
+      expected_agent_intent: "Acknowledge panic calmly in under 30 words, anchor in taking ownership together"
+    - user: "Okay I'll listen"
+      expected_agent_intent: "Retrieve metrics and present the stable pricing signal to reassure seller"
+      expected_tools:
+        - get_metrics
+

@@ -1,0 +1,20 @@
+id: P12
+name: Already Fixed
+description: Seller says they already restocked yesterday; agent adjusts plan gracefully without apologies
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "I already restocked all my products yesterday actually"
+      expected_agent_intent: "Acknowledge restock positively and pivot to immediate traffic/visibility promotion"
+      expected_tools:
+        - propose_action_plan
+    - user: "Yes, all 4 hero products are back in stock"
+      expected_agent_intent: "Propose 7-day boost promotion on in-stock inventory and schedule 3-day verification follow-up"
+      expected_tools:
+        - execute_kam_action
+        - schedule_followup
+

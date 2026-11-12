@@ -1,0 +1,15 @@
+id: P11
+name: Says Data is Wrong
+description: Seller asserts platform data is incorrect; agent does not get defensive and checks SKU level breakdown
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Those numbers you're showing me are completely wrong"
+      expected_agent_intent: "Accept feedback calmly, rule out price changes, and check product-by-product breakdown"
+      expected_tools:
+        - get_sku_stock
+

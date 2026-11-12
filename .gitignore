@@ -1,0 +1,61 @@
+# Secrets and Environment Variables
+.env
+.env.*
+*.env
+*.env.local
+*.env.production
+*.env.development
+!.env.example
+!.env.local.example
+
+# Credentials & Keys
+*.pem
+*.key
+*.cert
+*.p12
+*.crt
+
+# Python
+agent/.env
+agent/.venv/
+.venv/
+venv/
+ENV/
+env/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.log
+
+# Node & Next.js
+node_modules/
+frontend/node_modules/
+frontend/.env.local
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+.next/
+out/
+.vercel/
+
+# OS & Temporary Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.tmp
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.iml
+.antigravity/
+
+# LiveKit Runtime
+*.livekit_session

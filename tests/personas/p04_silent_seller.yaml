@@ -1,0 +1,18 @@
+id: P04
+name: Silent Seller
+description: Seller goes silent mid-conversation; agent checks in gently and offers callback
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "My ID is SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: ""
+      expected_agent_intent: "Check in gently after initial silence ('are you still there?')"
+    - user: ""
+      expected_agent_intent: "Schedule callback follow-up and close politely without hanging up abruptly"
+      expected_tools:
+        - schedule_followup
+        - end_call
+

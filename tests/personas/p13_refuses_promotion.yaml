@@ -1,0 +1,18 @@
+id: P13
+name: Refuses Promotion
+description: Seller declines promotion action; consent gate ensures promotion action is not executed
+seller:
+  id: SD-402
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Verify seller identity"
+      expected_tools:
+        - verify_seller_identity
+    - user: "I don't want any promotions or discounts"
+      expected_agent_intent: "Acknowledge immediately, exclude promotion from proposal, do not push"
+      prohibited_tools:
+        - execute_kam_action
+    - user: "No promotions at all, just focus on stock and dispatch"
+      expected_agent_intent: "Adapt plan with only auto-pause and alerts"
+

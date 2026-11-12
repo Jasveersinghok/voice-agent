@@ -1,0 +1,19 @@
+id: P10
+name: Contradicts Data
+description: Seller claims sales are not down; agent avoids arguing, validates seller perspective, and references verified numbers
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "My sales are not down at all"
+      expected_agent_intent: "Acknowledge without arguing; state what platform metrics show gently"
+      expected_tools:
+        - get_metrics
+    - user: "On my own dashboard it shows fine"
+      expected_agent_intent: "Offer to compare the specific 30-day window and highlight the hero SKU order counts"
+      expected_tools:
+        - get_sku_stock
+

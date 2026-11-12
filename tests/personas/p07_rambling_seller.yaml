@@ -1,0 +1,16 @@
+id: P07
+name: Rambling Seller
+description: Seller gives long rambling answers across multiple unrelated topics; agent summarizes concisely
+seller:
+  id: SD-402
+  store_name: Trendz Apparel
+scenario:
+  turns:
+    - user: "SD-402"
+      expected_agent_intent: "Confirm ID before verification"
+    - user: "Well you know my sales are down and I've been selling on Snapdeal for three years and before that I was on another platform and I've been having supplier issues since last Diwali and my wife thinks I should change platforms but I don't want to and I also have problems with the return policy and my cancellations are high because customers order and then cancel and I don't know what to do about any of it really"
+      expected_agent_intent: "Paraphrase core issues (supplier delay and cancellations) in under 35 words without rambling back"
+      expected_tools:
+        - log_seller_concern
+        - get_metrics
+
