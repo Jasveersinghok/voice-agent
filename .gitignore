@@ -8,6 +8,9 @@
 !.env.example
 !.env.local.example
 
+# Internal demo notes & scripts
+DEMO_SCRIPT.md
+
 # Credentials & Keys
 *.pem
 *.key
